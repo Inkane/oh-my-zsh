@@ -1,7 +1,10 @@
 # Search backward in the history for a line beginning with the current
 # line up to the cursor and move the cursor to the end of the line then
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end  history-search-end
+autoload history-search-end
+zle -N history-beginning-search-backward-end \
+	history-search-end
+zle -N history-beginning-search-forward-end \
+	history-search-end
 #k# search history backward for entry beginning with typed text
 bindkey '^xp'   history-beginning-search-backward-end
 #k# search history forward for entry beginning with typed text
@@ -193,7 +196,7 @@ cd() {
     fi
 }
 
-
+# create a temp diretcory
 cdt() {
     local t
     t=$(mktemp -d)

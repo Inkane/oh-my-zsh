@@ -9,7 +9,7 @@ zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
 zstyle ':vcs_info:*' unstagedstr '%F{yellow}●%f'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{red}:%f%F{yellow}%r%f'
-zstyle ':vcs_info:*' enable svn bzr cvs
+zstyle ':vcs_info:*' enable cvs svn bzr
 
 # test
 precmd () { vcs_info }
@@ -20,7 +20,7 @@ function prompt_char {
 	git branch >/dev/null 2>/dev/null && echo '±' && return
 	hg root >/dev/null 2>/dev/null && echo '☿' && return
 	svn info >/dev/null 2>/dev/null && echo '⚡' && return
-	bzr info >/dev/null 2>/dev/null && echo '◈' && return
+	bzr info >/dev/null 2>/dev/null && echo '◈ ' && return
 	# default prompt
 	echo %{$fg[red]%}">>"%{$reset_color%}
 }
