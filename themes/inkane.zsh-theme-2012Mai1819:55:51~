@@ -22,7 +22,7 @@ function prompt_char {
 	svn info >/dev/null 2>/dev/null && echo '⚡' && return
 	bzr info >/dev/null 2>/dev/null && echo '◈ ' && return
 	# default prompt
-	echo %{$fg[red]%}">> "%{$reset_color%}
+	echo %{$fg[red]%}">>"%{$reset_color%}
 }
 
 function hg_prompt_info {
